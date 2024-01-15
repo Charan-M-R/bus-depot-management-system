@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bus Details</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <form class="d-flex" action="/home" method="get">
+                <button class="btn btn-outline-success" type="submit">Home</button>
+              </form>
+            </li>
+          </ul>
+          <form class="d-flex" action="/bus" method="post">
+            <input class="form-control me-2" name="search1" type="search" size="100" placeholder="Enter the bus number" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <% for (let i = 0; i < Math.floor(items.length/3); i++) { %>
+    <div class="border" >
+      <div class="row">
+    <!-- style="width: 300px; margin-left: 325px;" -->
+        <div class="col-md-4 column" >
+          <form action="/repair" method="post">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> Bus Number :</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="card-text"><%=items[i*3+0]['bus_no']%></p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> Start Destination :</p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <p class="card-text"><%=items[i*3+0]['start_dest']%></p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> End Destination :</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="card-text"><%=items[i*3+0]['end_dest']%></p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> Registration Number :</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="card-text"><%=items[i*3+0]['reg_no']%></p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> Insurance Number :</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="card-text"><%=items[i*3+0]['insurance_no']%></p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="card-text"> Validity :</p>
+                  </div>
+                  <div class="col-md-6">
+                  <p class="card-text"><%=items[i*3+0]['validity'].toDateString()%></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+       <!-- // 2nd card -->
+       <div class="col-md-4 column" >
+         <form action="/repair" method="post">
+           <div class="card" style="width: 18rem;">
+             <div class="card-body">
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Bus Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <p class="card-text"><%=items[i*3+1]['bus_no']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Start Destination :</p>
+                 </div>
+
+                 <div class="col-md-6">
+                   <p class="card-text"><%=items[i*3+1]['start_dest']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> End Destination :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+1]['end_dest']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Registration Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+1]['reg_no']%></p>
+                 </div>
+               </div>
+
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Insurance Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+1]['insurance_no']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Validity :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+1]['validity'].toDateString()%></p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+         </form>
+       </div>
+
+       <div class="col-md-4 column" >
+         <form action="/repair" method="post">
+           <div class="card" style="width: 18rem;">
+             <div class="card-body">
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Bus Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                   <p class="card-text"><%=items[i*3+2]['bus_no']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Start Destination :</p>
+                 </div>
+
+                 <div class="col-md-6">
+                   <p class="card-text"><%=items[i*3+2]['start_dest']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> End Destination :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+2]['end_dest']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Registration Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+2]['reg_no']%></p>
+                 </div>
+               </div>
+
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Insurance Number :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+2]['insurance_no']%></p>
+                 </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="card-text"> Validity :</p>
+                 </div>
+                 <div class="col-md-6">
+                 <p class="card-text"><%=items[i*3+2]['validity'].toDateString()%></p>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+         </form>
+       </div>
+     <!-- Done -->
+      </div>
+    </div>
+
+    <%}%>
+
+    <%if(items.length%3==2){%>
+      <div class="border" >
+        <div class="row">
+          <div class="col-md-4 column" >
+            <form action="/repair" method="post">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Bus Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['bus_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Start Destination :</p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['start_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> End Destination :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['end_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Registration Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['reg_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Insurance Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['insurance_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Validity :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['validity'].toDateString()%></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-4 column" >
+            <form action="/repair" method="post">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Bus Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +1]['bus_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Start Destination :</p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +1]['start_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> End Destination :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +1]['end_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Registration Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +1]['reg_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Insurance Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +1]['insurance_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Validity :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['validity'].toDateString()%></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <%}%>
+
+    <%if(items.length%3==1){%>
+      <div class="border" >
+        <div class="row">
+          <div class="col-md-4 column" >
+            <form action="/repair" method="post">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Bus Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['bus_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Start Destination :</p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['start_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> End Destination :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['end_dest']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Registration Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['reg_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Insurance Number :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['insurance_no']%></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="card-text"> Validity :</p>
+                    </div>
+                    <div class="col-md-6">
+                    <p class="card-text"><%=items[Math.floor(items.length/3)*3 +0]['validity'].toDateString()%></p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <%}%>
+  </body>
+</html>

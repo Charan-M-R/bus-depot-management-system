@@ -1,0 +1,14 @@
+.border{
+  padding: 4% 10%;
+  background-color:  #E4F9F5;
+}
+.column{
+  text-align: center;
+}
+h1{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Sacramento', cursive;
+  background-color: #E4F9F5;
+}

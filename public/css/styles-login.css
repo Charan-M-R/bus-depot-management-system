@@ -1,0 +1,21 @@
+#login{
+  padding: 10% 15%;
+  text-align: center;
+    background-color: #E4F9F5;
+}
+h1{
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Sacramento', cursive;
+  background-color: #E4F9F5;
+
+}
+h2{
+  font-size: 10px;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'Bakbak One', cursive;
+  background-color: #E4F9F5;
+
+}
